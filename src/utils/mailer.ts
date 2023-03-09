@@ -1,4 +1,7 @@
+import { ConfigService } from '@nestjs/config';
 import * as nodemailer from 'nodemailer';
+
+const config = new ConfigService();
 
 const transport = nodemailer.createTransport({
   host: 'smtp.gmail.com',
@@ -6,7 +9,7 @@ const transport = nodemailer.createTransport({
   secure: false, // true for 465, false for other ports
   auth: {
     user: 'amirsohel.as10@gmail.com',
-    pass: 'tqkcwvhshzgurnpa',
+    pass: config.get('EMAIL_SECRET'),
   },
 });
 

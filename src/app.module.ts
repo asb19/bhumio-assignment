@@ -22,6 +22,7 @@ import * as Joi from '@hapi/joi';
         POSTGRES_PASSWORD: Joi.string().required(),
         POSTGRES_DB: Joi.string().required(),
         SESSION_SECRET: Joi.string().required(),
+        EMAIL_SECRET: Joi.string().required(),
       }),
     }),
     PrismaModule,
